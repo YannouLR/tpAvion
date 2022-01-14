@@ -3,15 +3,10 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use App\Entity\Pays;
 
-/**
- * @ORM\Entity
- * @ORM\Table(uniqueConstraints={@ORM\UniqueConstraint(name="unique_ville", fields={"nom"})})
- */
 
-class Airport{
-    
+trait Pays{
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -21,16 +16,13 @@ class Airport{
     private int $id;
 
     /**
-     * @ORM\Column(length="100")
+     * @ORM\Column(length=100)
      */
 
-    private string $nom;
-    
-    use Pays;
+    private string $pays;
 
-    public function __construct(string $n)
-    {
-        $this->nom = $n;
+    public function Pays(string $pays){
+        $this->pays = $pays;
     }
 
     /**
@@ -54,21 +46,21 @@ class Airport{
     }
 
     /**
-     * Get the value of nom
+     * Get the value of pays
      */ 
-    public function getNom()
+    public function getPays()
     {
-        return $this->nom;
+        return $this->pays;
     }
 
     /**
-     * Set the value of nom
+     * Set the value of pays
      *
      * @return  self
      */ 
-    public function setNom($nom)
+    public function setPays($pays)
     {
-        $this->nom = $nom;
+        $this->pays = $pays;
 
         return $this;
     }

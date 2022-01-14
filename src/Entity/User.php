@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use App\Entity\Pays;
 
 /**
  * @ORM\Entity
@@ -35,6 +36,8 @@ class User{
      */
 
     private string $email;
+
+    use pays;
 
     public function __construct(string $f, string $l, string $e)
     {
