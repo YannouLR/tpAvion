@@ -26,7 +26,7 @@ final class Passenger extends User{
     /**
      * Get the value of numPasseport
      */ 
-    public function getNumPasseport()
+    public function getNumPasseport(): int
     {
         return $this->numPasseport;
     }
@@ -36,7 +36,7 @@ final class Passenger extends User{
      *
      * @return  self
      */ 
-    public function setNumPasseport($numPasseport)
+    public function setNumPasseport(int $numPasseport)
     {
         $this->numPasseport = $numPasseport;
 

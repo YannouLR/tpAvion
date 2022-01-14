@@ -16,10 +16,14 @@ final class Responsable extends User{
 
     private int $numBadge;
 
+    private array $listPassenger = [];
+
     public function __construct(string $f, string $l, string $e,int $NB)
     {
         parent::__construct($f, $l, $e);
         $this->numBadge = $NB;
     }
+
+
 
 }

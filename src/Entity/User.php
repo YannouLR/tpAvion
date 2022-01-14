@@ -46,7 +46,7 @@ class User{
     /**
      * Get the value of firstname
      */ 
-    public function getFirstname()
+    public function getFirstname(): string
     {
         return $this->firstname;
     }
@@ -56,7 +56,7 @@ class User{
      *
      * @return  self
      */ 
-    public function setFirstname($firstname)
+    public function setFirstname(string $firstname)
     {
         $this->firstname = $firstname;
 
@@ -66,7 +66,7 @@ class User{
     /**
      * Get the value of lastname
      */ 
-    public function getLastname()
+    public function getLastname() : string
     {
         return $this->lastname;
     }
@@ -76,7 +76,7 @@ class User{
      *
      * @return  self
      */ 
-    public function setLastname($lastname)
+    public function setLastname(string $lastname)
     {
         $this->lastname = $lastname;
 
@@ -86,7 +86,7 @@ class User{
     /**
      * Get the value of email
      */ 
-    public function getEmail()
+    public function getEmail(): string
     {
         return $this->email;
     }
@@ -96,7 +96,7 @@ class User{
      *
      * @return  self
      */ 
-    public function setEmail($email)
+    public function setEmail(string $email)
     {
         $this->email = $email;
 

@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity
  */
 
-class flight{
+class Flight{
 
     /**
      * @ORM\Id
@@ -48,7 +48,7 @@ class flight{
     /**
      * Get the value of id
      */ 
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -58,7 +58,7 @@ class flight{
      *
      * @return  self
      */ 
-    public function setId($id)
+    public function setId(int $id)
     {
         $this->id = $id;
 
@@ -68,7 +68,7 @@ class flight{
     /**
      * Get the value of numFlight
      */ 
-    public function getNumFlight()
+    public function getNumFlight(): int
     {
         return $this->numFlight;
     }
@@ -78,7 +78,7 @@ class flight{
      *
      * @return  self
      */ 
-    public function setNumFlight($numFlight)
+    public function setNumFlight(int $numFlight)
     {
         $this->numFlight = $numFlight;
 
@@ -88,7 +88,7 @@ class flight{
      /**
       * Get the value of departure
       */ 
-     public function getDeparture()
+     public function getDeparture(): Airport
      {
           return $this->departure;
      }
@@ -98,7 +98,7 @@ class flight{
       *
       * @return  self
       */ 
-     public function setDeparture($departure)
+     public function setDeparture(Airport $departure)
      {
           $this->departure = $departure;
 
@@ -108,7 +108,7 @@ class flight{
     /**
      * Get the value of final
      */ 
-    public function getFinal()
+    public function getFinal(): Airport
     {
         return $this->final;
     }
@@ -118,7 +118,7 @@ class flight{
      *
      * @return  self
      */ 
-    public function setFinal($final)
+    public function setFinal(Airport $final)
     {
         $this->final = $final;
 

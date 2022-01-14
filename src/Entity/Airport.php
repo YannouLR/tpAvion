@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
+ * @ORM\Table(uniqueConstraints={@ORM\UniqueConstraint(name="unique_ville", fields={"nom"})})
  */
 
 class Airport{
