@@ -21,27 +21,7 @@ final class Passenger extends User{
         parent::__construct($f, $l, $e);
         $this->numPasseport = $NP;
     }
-
-
-    /**
-     * Get the value of numPasseport
-     */ 
-    public function getNumPasseport(): int
-    {
-        return $this->numPasseport;
-    }
-
-    /**
-     * Set the value of numPasseport
-     *
-     * @return  self
-     */ 
-    public function setNumPasseport(int $numPasseport)
-    {
-        $this->numPasseport = $numPasseport;
-
-        return $this;
-    }
+    
     public function cancelTicket()
     {
         
@@ -53,5 +33,29 @@ final class Passenger extends User{
     public function registration()
     {
         
+    }
+
+    /**
+     * Get the value of numPasseport
+     *
+     * @return int
+     */
+    public function getNumPasseport(): int
+    {
+        return $this->numPasseport;
+    }
+
+    /**
+     * Set the value of numPasseport
+     *
+     * @param int $numPasseport
+     *
+     * @return self
+     */
+    public function setNumPasseport(int $numPasseport): self
+    {
+        $this->numPasseport = $numPasseport;
+
+        return $this;
     }
 }

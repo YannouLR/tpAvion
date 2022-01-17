@@ -3,7 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use App\Entity\Pays;
+use App\Traits\Pays;
 
 /**
  * @ORM\Entity
@@ -33,10 +33,13 @@ class Airport{
         $this->nom = $n;
     }
 
+
     /**
      * Get the value of id
-     */ 
-    public function getId()
+     *
+     * @return int
+     */
+    public function getId(): int
     {
         return $this->id;
     }
@@ -44,9 +47,11 @@ class Airport{
     /**
      * Set the value of id
      *
-     * @return  self
-     */ 
-    public function setId($id)
+     * @param int $id
+     *
+     * @return self
+     */
+    public function setId(int $id): self
     {
         $this->id = $id;
 
@@ -55,8 +60,10 @@ class Airport{
 
     /**
      * Get the value of nom
-     */ 
-    public function getNom()
+     *
+     * @return string
+     */
+    public function getNom(): string
     {
         return $this->nom;
     }
@@ -64,9 +71,11 @@ class Airport{
     /**
      * Set the value of nom
      *
-     * @return  self
-     */ 
-    public function setNom($nom)
+     * @param string $nom
+     *
+     * @return self
+     */
+    public function setNom(string $nom): self
     {
         $this->nom = $nom;
 

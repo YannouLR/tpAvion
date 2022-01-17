@@ -49,9 +49,12 @@ class Ticket{
         $this->flight = $f;
     }
 
+
     /**
      * Get the value of numTicket
-     */ 
+     *
+     * @return int
+     */
     public function getNumTicket(): int
     {
         return $this->numTicket;
@@ -60,9 +63,11 @@ class Ticket{
     /**
      * Set the value of numTicket
      *
-     * @return  self
-     */ 
-    public function setNumTicket(int $numTicket)
+     * @param int $numTicket
+     *
+     * @return self
+     */
+    public function setNumTicket(int $numTicket): self
     {
         $this->numTicket = $numTicket;
 
@@ -71,7 +76,9 @@ class Ticket{
 
     /**
      * Get the value of passenger
-     */ 
+     *
+     * @return Passenger
+     */
     public function getPassenger(): Passenger
     {
         return $this->passenger;
@@ -80,9 +87,11 @@ class Ticket{
     /**
      * Set the value of passenger
      *
-     * @return  self
-     */ 
-    public function setPassenger(Passenger $passenger)
+     * @param Passenger $passenger
+     *
+     * @return self
+     */
+    public function setPassenger(Passenger $passenger): self
     {
         $this->passenger = $passenger;
 
@@ -91,8 +100,10 @@ class Ticket{
 
     /**
      * Get the value of user
-     */ 
-    public function getUser() :User
+     *
+     * @return User
+     */
+    public function getUser(): User
     {
         return $this->user;
     }
@@ -100,9 +111,11 @@ class Ticket{
     /**
      * Set the value of user
      *
-     * @return  self
-     */ 
-    public function setUser(User $user)
+     * @param User $user
+     *
+     * @return self
+     */
+    public function setUser(User $user): self
     {
         $this->user = $user;
 
@@ -111,8 +124,10 @@ class Ticket{
 
     /**
      * Get the value of flight
-     */ 
-    public function getFlight(): Flight
+     *
+     * @return flight
+     */
+    public function getFlight(): flight
     {
         return $this->flight;
     }
@@ -120,9 +135,11 @@ class Ticket{
     /**
      * Set the value of flight
      *
-     * @return  self
-     */ 
-    public function setFlight(Flight $flight)
+     * @param flight $flight
+     *
+     * @return self
+     */
+    public function setFlight(flight $flight): self
     {
         $this->flight = $flight;
 

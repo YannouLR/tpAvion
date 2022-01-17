@@ -45,9 +45,13 @@ class Flight{
         $this->final = $f;
     }
 
+    
+
     /**
      * Get the value of id
-     */ 
+     *
+     * @return int
+     */
     public function getId(): int
     {
         return $this->id;
@@ -56,9 +60,11 @@ class Flight{
     /**
      * Set the value of id
      *
-     * @return  self
-     */ 
-    public function setId(int $id)
+     * @param int $id
+     *
+     * @return self
+     */
+    public function setId(int $id): self
     {
         $this->id = $id;
 
@@ -67,7 +73,9 @@ class Flight{
 
     /**
      * Get the value of numFlight
-     */ 
+     *
+     * @return int
+     */
     public function getNumFlight(): int
     {
         return $this->numFlight;
@@ -76,9 +84,11 @@ class Flight{
     /**
      * Set the value of numFlight
      *
-     * @return  self
-     */ 
-    public function setNumFlight(int $numFlight)
+     * @param int $numFlight
+     *
+     * @return self
+     */
+    public function setNumFlight(int $numFlight): self
     {
         $this->numFlight = $numFlight;
 
@@ -87,7 +97,9 @@ class Flight{
 
      /**
       * Get the value of departure
-      */ 
+      *
+      * @return Airport
+      */
      public function getDeparture(): Airport
      {
           return $this->departure;
@@ -96,9 +108,11 @@ class Flight{
      /**
       * Set the value of departure
       *
-      * @return  self
-      */ 
-     public function setDeparture(Airport $departure)
+      * @param Airport $departure
+      *
+      * @return self
+      */
+     public function setDeparture(Airport $departure): self
      {
           $this->departure = $departure;
 
@@ -107,7 +121,9 @@ class Flight{
 
     /**
      * Get the value of final
-     */ 
+     *
+     * @return Airport
+     */
     public function getFinal(): Airport
     {
         return $this->final;
@@ -116,9 +132,11 @@ class Flight{
     /**
      * Set the value of final
      *
-     * @return  self
-     */ 
-    public function setFinal(Airport $final)
+     * @param Airport $final
+     *
+     * @return self
+     */
+    public function setFinal(Airport $final): self
     {
         $this->final = $final;
 

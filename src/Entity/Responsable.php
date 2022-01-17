@@ -26,4 +26,28 @@ final class Responsable extends User{
 
 
 
+
+    /**
+     * Get the value of numBadge
+     *
+     * @return int
+     */
+    public function getNumBadge(): int
+    {
+        return $this->numBadge;
+    }
+
+    /**
+     * Set the value of numBadge
+     *
+     * @param int $numBadge
+     *
+     * @return self
+     */
+    public function setNumBadge(int $numBadge): self
+    {
+        $this->numBadge = $numBadge;
+
+        return $this;
+    }
 }

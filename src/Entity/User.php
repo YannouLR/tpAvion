@@ -3,7 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use App\Entity\Pays;
+use App\Traits\Pays;
 
 /**
  * @ORM\Entity
@@ -46,9 +46,37 @@ class User{
         $this->email = $e;
     }
 
+    
+
+    /**
+     * Get the value of id
+     *
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set the value of id
+     *
+     * @param int $id
+     *
+     * @return self
+     */
+    public function setId(int $id): self
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
     /**
      * Get the value of firstname
-     */ 
+     *
+     * @return string
+     */
     public function getFirstname(): string
     {
         return $this->firstname;
@@ -57,9 +85,11 @@ class User{
     /**
      * Set the value of firstname
      *
-     * @return  self
-     */ 
-    public function setFirstname(string $firstname)
+     * @param string $firstname
+     *
+     * @return self
+     */
+    public function setFirstname(string $firstname): self
     {
         $this->firstname = $firstname;
 
@@ -68,8 +98,10 @@ class User{
 
     /**
      * Get the value of lastname
-     */ 
-    public function getLastname() : string
+     *
+     * @return string
+     */
+    public function getLastname(): string
     {
         return $this->lastname;
     }
@@ -77,9 +109,11 @@ class User{
     /**
      * Set the value of lastname
      *
-     * @return  self
-     */ 
-    public function setLastname(string $lastname)
+     * @param string $lastname
+     *
+     * @return self
+     */
+    public function setLastname(string $lastname): self
     {
         $this->lastname = $lastname;
 
@@ -88,7 +122,9 @@ class User{
 
     /**
      * Get the value of email
-     */ 
+     *
+     * @return string
+     */
     public function getEmail(): string
     {
         return $this->email;
@@ -97,9 +133,11 @@ class User{
     /**
      * Set the value of email
      *
-     * @return  self
-     */ 
-    public function setEmail(string $email)
+     * @param string $email
+     *
+     * @return self
+     */
+    public function setEmail(string $email): self
     {
         $this->email = $email;
 

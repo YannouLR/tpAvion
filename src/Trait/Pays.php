@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Entity;
+namespace App\Traits;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -25,10 +25,14 @@ trait Pays{
         $this->pays = $pays;
     }
 
+    
+
     /**
      * Get the value of id
-     */ 
-    public function getId()
+     *
+     * @return int
+     */
+    public function getId(): int
     {
         return $this->id;
     }
@@ -36,9 +40,11 @@ trait Pays{
     /**
      * Set the value of id
      *
-     * @return  self
-     */ 
-    public function setId($id)
+     * @param int $id
+     *
+     * @return self
+     */
+    public function setId(int $id): self
     {
         $this->id = $id;
 
@@ -47,8 +53,10 @@ trait Pays{
 
     /**
      * Get the value of pays
-     */ 
-    public function getPays()
+     *
+     * @return string
+     */
+    public function getPays(): string
     {
         return $this->pays;
     }
@@ -56,9 +64,11 @@ trait Pays{
     /**
      * Set the value of pays
      *
-     * @return  self
-     */ 
-    public function setPays($pays)
+     * @param string $pays
+     *
+     * @return self
+     */
+    public function setPays(string $pays): self
     {
         $this->pays = $pays;
 
