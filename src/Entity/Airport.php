@@ -28,9 +28,10 @@ class Airport{
     
     use Pays;
 
-    public function __construct(string $n)
+    public function __construct(string $n, string $p)
     {
         $this->nom = $n;
+        $this->pays = $p;
     }
 
 

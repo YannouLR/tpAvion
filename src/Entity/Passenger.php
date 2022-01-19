@@ -16,9 +16,9 @@ final class Passenger extends User{
 
     private int $numPasseport;
 
-    public function __construct(string $f, string $l, string $e,int $NP)
+    public function __construct(string $f, string $l, string $e, string $p,int $NP)
     {
-        parent::__construct($f, $l, $e);
+        parent::__construct($f, $l, $e, $p);
         $this->numPasseport = $NP;
     }
     

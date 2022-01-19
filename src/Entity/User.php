@@ -39,11 +39,12 @@ class User{
 
     use pays;
 
-    public function __construct(string $f, string $l, string $e)
+    public function __construct(string $f, string $l, string $e, string $p)
     {
         $this->firstname = $f;
         $this->lastname = $l;
         $this->email = $e;
+        $this->pays = $p;
     }
 
     
