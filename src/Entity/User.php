@@ -14,7 +14,7 @@ class User{
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
-     * @ORM\COlumn(type="integer")
+     * @ORM\Column(type="integer")
      */
 
     private int $id;

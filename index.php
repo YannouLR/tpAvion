@@ -19,7 +19,8 @@ $router->get("/Passenger/:id", "App\Controllers\PassengerController@showOne");
 $router->get("/Users/:id", "App\Controllers\UserController@showOne");
 $router->post("/User", "App\Controllers\UserController@add");
 $router->get("/User", "App\Controllers\UserController@add");
-$router->put("/User/:id", "App\Controllers\UserController@modidy");
+$router->post("/User/:id", "App\Controllers\UserController@modify");
+$router->get("/User/:id", "App\Controllers\UserController@modify");
 
 $router->get("/Airport", "App\Controllers\AirportController@index");
 

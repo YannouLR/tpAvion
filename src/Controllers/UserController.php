@@ -16,7 +16,7 @@ class UserController
     const REQUIRES = [
         "firstname",
         "lastname",
-        "emial",
+        "email",
         "pays"
     ];
 
@@ -30,14 +30,18 @@ class UserController
         print($aUser->getLastname());
     }
 
-    public function add()
+    public function add(bool $isModify= false)
     {
 
         foreach (self::REQUIRES as $value) {
             if (!array_key_exists($value, $_POST)) {
                 $_SESSION["error"] ="Il manque des champs à remplir";
+                if ($isModify) {
+                    header("location: http://tpAvion.local/src/Vues/ModifyUser.php");
+                    exit;
+                }
                 header("location: http://tpAvion.local/src/Vues/AddUser.php");
-                
+                exit;
             }
             $_POST[$value] = htmlentities(strip_tags($_POST[$value]));
         }
@@ -48,6 +52,11 @@ class UserController
         $entityManager->persist($user);
 
         $entityManager->flush();
+        
+        if ($isModify) {
+            header("location: http://tpAvion.local/src/Vues/ModifyUser.php");
+            exit;
+        }
 
         header("location: http://tpAvion.local/src/Vues/AddUser.php");
         
@@ -71,6 +80,27 @@ class UserController
 
     public function modify(string $sId)
     {
-        header("location: http://tpAvion.local/src/Vues/AddUser.php");
+        $em = Em::getEntityManager();
+        $userRepository = new EntityRepository($em, new ClassMetadata("App\Entity\User"));
+
+        $userId = $userRepository->find($sId);
+        
+        if (empty($_POST)) {
+            $userDatas = [];
+
+            foreach (self::REQUIRES as $value) {
+                $getteur = "get". ucfirst($value);
+                $userDatas[$value] = $userId->$getteur();
+            }
+            
+            $userDatas["id"] = $userId->getId();
+            $_SESSION["userDatas"] = $userDatas;
+            
+            header("location: http://tpAvion.local/src/Vues/ModifyUser.php");
+            exit;
+        }
+
+        $this->add(true);
+
     }
 }
