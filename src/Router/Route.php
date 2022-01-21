@@ -7,13 +7,12 @@ class Route{
     public string $path; 
     public string $action;
     public array $matches;
-    public array $posts;
 
-    public function __construct(string $path, string $action, ?array $posts = [])
+    public function __construct(string $path, string $action)
     {
         $this->path = trim($path, '/');
         $this->action = $action;
-        $this->posts = $posts;
+       
     }
     
     public function matches(string $url)
@@ -35,9 +34,6 @@ class Route{
         $params = explode('@', $this->action);
         $controller = new $params[0]();
         $method = $params[1];
-        if (count($this->posts)) {
-            return $controller->$method($this->posts);
-        }
 
         return isset($this->matches[1]) ? $controller->$method($this->matches[1]) : 
         $controller->$method();

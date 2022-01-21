@@ -68,4 +68,9 @@ class UserController
         // }
         
     }
+
+    public function modify(string $sId)
+    {
+        header("location: http://tpAvion.local/src/Vues/AddUser.php");
+    }
 }

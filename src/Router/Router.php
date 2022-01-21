@@ -5,15 +5,11 @@ class Router{
 
     public string $url;
     public array $routes = [];
-    public array $posts = [];
-    
-    public function __construct(string $url, ?array $posts = [])
+        
+    public function __construct(string $url)
     {
         $this->url = trim($url, '/');
 
-        if ($posts) {
-            $this->posts = $posts;
-        }
         
     }
 
@@ -23,7 +19,11 @@ class Router{
     }
     public function post(string $path, string $action)
     {
-        $this->routes["POST"][] = new Route($path, $action, $this->posts);
+        $this->routes["POST"][] = new Route($path, $action);
+    }
+    public function put(string $path, string $action)
+    {
+        $this->routes["PUT"][] = new Route($path, $action);
     }
 
     public function run()
