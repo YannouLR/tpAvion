@@ -7,7 +7,6 @@ use App\Traits\Pays;
 
 /**
  * @ORM\Entity
- * @ORM\Table(uniqueConstraints={@ORM\UniqueConstraint(name="unique_ville", fields={"nom"})})
  */
 
 class Airport{

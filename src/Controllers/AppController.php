@@ -13,26 +13,26 @@ class AppController{
 
     public static function index(){
 
-        $entityManager = Em::getEntityManager();
+        // $entityManager = Em::getEntityManager();
 
-        $passenger1 = new Passenger('Yann', 'Lenerand', 'yann.lenerand@yahoo.com', "France", 47);
-        $entityManager->persist($passenger1);
+        // $passenger1 = new Passenger('Yann', 'Lenerand', 'yann.lenerand@yahoo.com', "France", 47);
+        // $entityManager->persist($passenger1);
 
-        $user1 = new User('Yann', 'Lenerand', 'yann.lenerand@yahoo.com', "France");
-        $entityManager->persist($user1);
+        // $user1 = new User('Yann', 'Lenerand', 'yann.lenerand@yahoo.com', "France");
+        // $entityManager->persist($user1);
 
-        $depart = new Airport('Nancy', "France");
-        $entityManager->persist($depart);
+        // $depart = new Airport('Nancy', "France");
+        // $entityManager->persist($depart);
 
-        $arriver = new Airport("Marseille", "France");
-        $entityManager->persist($arriver);
+        // $arriver = new Airport("Marseille", "France");
+        // $entityManager->persist($arriver);
+        
+        // $flight = new Flight(10, $depart, $arriver);
+        // $entityManager->persist($flight);
 
-        $flight = new Flight(10, $depart, $arriver);
-        $entityManager->persist($flight);
-
-        $ticket685 = new Ticket(685, $passenger1, $user1, $flight);
-        $entityManager->persist($ticket685);
-        $entityManager->flush();
+        // $ticket685 = new Ticket(685, $passenger1, $user1, $flight);
+        // $entityManager->persist($ticket685);
+        // $entityManager->flush();
 
     }
 }
