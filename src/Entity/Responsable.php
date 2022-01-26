@@ -18,9 +18,9 @@ final class Responsable extends User{
 
     private array $listPassenger = [];
 
-    public function __construct(string $f, string $l, string $e,int $NB)
+    public function __construct(string $f, string $p, string $l, string $e,int $NB)
     {
-        parent::__construct($f, $l, $e);
+        parent::__construct($f, $l, $e, $p);
         $this->numBadge = $NB;
     }
 

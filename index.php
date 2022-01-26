@@ -14,13 +14,17 @@ AppController::index();
 $router = new Router($_GET['url']);
 
 $router->get('/', 'App\Controllers\AppController@index');
+$router->post('/login', 'App\Controllers\AppController@login');
+$router->get('/login', 'App\Controllers\AppController@login');
+
 $router->get("/Passenger/:id", "App\Controllers\PassengerController@showOne");
 
 $router->get("/Users/:id", "App\Controllers\UserController@showOne");
-$router->post("/User", "App\Controllers\UserController@add");
-$router->get("/User", "App\Controllers\UserController@add");
-$router->post("/User/:id", "App\Controllers\UserController@modify");
-$router->get("/User/:id", "App\Controllers\UserController@modify");
+$router->post("/AUser", "App\Controllers\UserController@add");
+$router->get("/AUser", "App\Controllers\UserController@add");
+$router->post("/MUser/:id", "App\Controllers\UserController@modify");
+$router->get("/MUser/:id", "App\Controllers\UserController@modify");
+$router->get("/DUser/:id", "App\Controllers\UserController@delete");
 
 $router->get("/Airport", "App\Controllers\AirportController@index");
 

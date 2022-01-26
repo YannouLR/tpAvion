@@ -13,6 +13,8 @@ class AppController{
 
     public static function index(){
 
+        echo "BIENVENUE";
+
         // $entityManager = Em::getEntityManager();
 
         // $passenger1 = new Passenger('Yann', 'Lenerand', 'yann.lenerand@yahoo.com', "France", 47);
@@ -34,5 +36,26 @@ class AppController{
         // $entityManager->persist($ticket685);
         // $entityManager->flush();
 
+    }
+
+    const NEEDS = [
+        "email",
+        "password"
+    ];
+
+    public function login()
+    {
+        if (empty($_POST)) {
+            include("./src/Vues/register/login.php");
+        }
+        if (!empty($_POST)) {
+            foreach (self::NEEDS as $value) {
+                if (!array_key_exists($value, $_POST)) {
+                    echo "La valeur n'existe pas";
+                    die();
+                }
+                $_POST[$value] = trim(htmlentities(strip_tags($_POST[$value])));
+            }
+        }
     }
 }

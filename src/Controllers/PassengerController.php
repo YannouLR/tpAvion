@@ -15,8 +15,8 @@ class PassengerController
         $em = Em::getEntityManager();
         $repository = new EntityRepository($em, new ClassMetadata("App\Entity\Passenger"));
 
+        // var_dump($aUser);die;
         $aUser =$repository->find((int)$sId);
-        var_dump($aUser);die;
         print($aUser->getFirstname());
         print($aUser->getLastname());
     }

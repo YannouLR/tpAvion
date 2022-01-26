@@ -7,6 +7,9 @@ use App\Traits\Pays;
 
 /**
  * @ORM\Entity
+ * @ORM\InheritanceType("SINGLE_TABLE")
+ * @ORM\DiscriminatorColumn(name="discr", type="string")
+ * @ORM\DiscriminatorMap({"passenger" = "Passenger", "responsable" = "Responsable"})
  */
 
 class User{
@@ -17,7 +20,7 @@ class User{
      * @ORM\Column(type="integer")
      */
 
-    private int $id;
+    protected int $id;
 
     /**
      * @ORM\Column(length="100")
@@ -45,32 +48,6 @@ class User{
         $this->lastname = $l;
         $this->email = $e;
         $this->pays = $p;
-    }
-
-    
-
-    /**
-     * Get the value of id
-     *
-     * @return int
-     */
-    public function getId(): int
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set the value of id
-     *
-     * @param int $id
-     *
-     * @return self
-     */
-    public function setId(int $id): self
-    {
-        $this->id = $id;
-
-        return $this;
     }
 
     /**
@@ -143,5 +120,15 @@ class User{
         $this->email = $email;
 
         return $this;
+    }
+
+    /**
+     * Get the value of id
+     *
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
     }
 }

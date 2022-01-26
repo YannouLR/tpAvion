@@ -20,8 +20,8 @@ session_start();
         ?>
         
     </div>
-    <form action="/User" method="POST">
-        <input type="text" name="fistname" class="firstname" placeholder="Prenom">
+    <form action="/AUser" method="POST">
+        <input type="text" name="firstname" class="firstname" placeholder="Prenom">
         <input type="text" name="lastname" class="lastname" placeholder="Nom">
         <input type="text" name="email" class="email" placeholder="Email">
         <input type="text" name="pays" class="pays" placeholder="Pays">
