@@ -13,9 +13,9 @@ AppController::index();
 
 $router = new Router($_GET['url']);
 
-$router->get('/', 'App\Controllers\AppController@index');
-$router->post('/login', 'App\Controllers\AppController@login');
-$router->get('/login', 'App\Controllers\AppController@login');
+// $router->get('/', 'App\Controllers\AppController@index');
+$router->post('/', 'App\Controllers\AppController@login');
+$router->get('/', 'App\Controllers\AppController@login');
 
 $router->get("/Passenger/:id", "App\Controllers\PassengerController@showOne");
 

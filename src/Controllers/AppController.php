@@ -8,6 +8,8 @@ use App\Entity\Passenger;
 use App\Entity\User;
 use App\Entity\Ticket;
 use App\Helpers\EntityManagerHelpers as Em;
+use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\Mapping\ClassMetadata;
 
 class AppController{
 
@@ -55,7 +57,32 @@ class AppController{
                     die();
                 }
                 $_POST[$value] = trim(htmlentities(strip_tags($_POST[$value])));
+                if ($_POST[$value] === "") {
+                    echo "Bien essayé réessaye plus tard";
+                    die();
+                }
             }
+
+            $em = Em::getEntityManager();
+            $repo = new EntityRepository($em, new ClassMetadata("App\Entity\User"));
+
+            $user = $repo->findBy(['email' => $_POST["email"]]);
+
+            if (empty($user)) {
+                echo "cet utilisateur n'existe pas";
+                die();
+            }
+
+            $passwordV = password_verify($_POST['password'], $user[0]->getPassword());
+            if (!$passwordV) {
+                echo "Le mot de passe ne correspond";
+                die;
+            }
+
+            $_SESSION['email'] = $_POST["email"];
+            $_SESSION['prenom'] = $user[0]->getPrenom;
+            $_SESSION['type'] = $user[0]->get_class;
+
         }
     }
 }
